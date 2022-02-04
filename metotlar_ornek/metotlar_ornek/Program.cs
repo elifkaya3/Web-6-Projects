@@ -32,8 +32,10 @@ namespace metotlar_ornek
                  tahminHakki++;
              }
              Console.ReadLine();*/
+
             int TahminHakki = 0;
             int sayac = 0;
+            int puan = 50;
 
             int uretilenSayi = sayiUret();
             Console.WriteLine(uretilenSayi);
@@ -66,14 +68,17 @@ namespace metotlar_ornek
                     return rnd.Next(1, 100);
             }
           
-            int Tahmin()
+            int Tahmin(int TahminHakki)
             {
                 Console.WriteLine("kullanici tahmini");
                return int.Parse(Console.ReadLine());
                 
             }
            
-
+            void win(int)
+            {
+                Console.WriteLine();
+            }
         }
     }
 }

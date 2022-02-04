@@ -103,7 +103,7 @@ namespace Proje_09_Dizi
              Console.ReadLine();*/
 
 
-            Random rnd = new Random();
+            /*Random rnd = new Random();
             int sayi = rnd.Next(1, 100);
             Console.WriteLine($"{sayi}--1 ile 100 arasında 5 adet sayı giriniz:");
             int girilecekSayi = 0;
@@ -116,7 +116,7 @@ namespace Proje_09_Dizi
 
                 if (sayi == kullaniciTahmin)
                 {
-                    Console.WriteLine($"{girilecekSayi}.sayi+{girilecekSayi*10}");
+                    Console.WriteLine($"{girilecekSayi}.sayi+{girilecekSayi-1 *10}");
 
                     Console.WriteLine("tebrikler oyun bitti");
                     break;
@@ -124,10 +124,37 @@ namespace Proje_09_Dizi
                 else
                 {
                     Console.WriteLine("yanlış tahmin");
+                    Console.WriteLine($"{girilecekSayi-1} hakkınız kaldı");
+
 
                 }
                 Console.WriteLine("kaybettiniz!");
 
+            }
+            Console.ReadLine();*/
+
+            Random rnd = new Random();
+            int sayi = rnd.Next(1, 100);
+            int randomSayi = 1;
+            int tahminHakki = randomSayi;
+            Console.WriteLine("-> Random Değer Üretildi.\n-> Üretilen Random Değer 0 ile 100 Arasında Olabilir.");
+            while (randomSayi <= 5)
+            {
+                Console.WriteLine($"-> {randomSayi}. Tahminin: ", (tahminHakki + 1));
+                int kullaniciTahmin = int.Parse(Console.ReadLine());
+                randomSayi++;
+                if (sayi == kullaniciTahmin)
+                {
+                    Console.WriteLine($"Tebrik Ederim! {tahminHakki + 1} Deneme Hakkında Doğru Bildin.");
+                    Console.WriteLine("-> Bilgisayar Tarafından Üretilen Değer: ", randomSayi);
+                    break;
+                }
+                else if (randomSayi <= 5)
+                {
+                    Console.WriteLine("yanlış tahmin");
+                    Console.WriteLine("-> Bilgisayar Tarafından Üretilen Değer: " + randomSayi);
+                }
+                tahminHakki++;
             }
             Console.ReadLine();
         }
